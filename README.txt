@@ -7,6 +7,7 @@ URL: http://www.d-project.com/
 Licensed under the MIT license:
   http://www.opensource.org/licenses/mit-license.php
 
+jQuery UI Touch Punch: https://github.com/furf/jquery-ui-touch-punch
 
 -- System Requirements
 
