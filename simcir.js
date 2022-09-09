@@ -2060,6 +2060,7 @@ simcir.$ = function() {
             adjustDevice($dev);
             updateConnectors();
           } else {
+            alert("[LOG] オブジェクト削除");
             removeDevice($dev);
           }
         });
@@ -2138,7 +2139,6 @@ simcir.$ = function() {
       }
     };
     var mouseUpHandler = function(event) {
-      console.log("mouseUpHandler");
       if (dragCompleteHandler != null) {
         dragCompleteHandler(event);
       }
