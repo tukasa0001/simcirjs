@@ -2060,7 +2060,6 @@ simcir.$ = function() {
             adjustDevice($dev);
             updateConnectors();
           } else {
-            alert("[LOG] オブジェクト削除");
             removeDevice($dev);
           }
         });
