@@ -1275,10 +1275,7 @@ simcir.$ = function() {
       addClass('simcir-dialog-title').
       text(title).
       css('cursor', 'default').
-      on('mousedown', function(event) {
-        event.preventDefault();
-      });
-      on('tourchstart', function(event) {
+      on('mousedown tourchstart', function(event) {
         event.preventDefault();
       });
     var $dlg = $('<div></div>').
