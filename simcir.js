@@ -1275,7 +1275,7 @@ simcir.$ = function() {
       addClass('simcir-dialog-title').
       text(title).
       css('cursor', 'default').
-      on('mousedown tourchstart', function(event) {
+      on('mousedown touchstart', function(event) {
         event.preventDefault();
       });
     var $dlg = $('<div></div>').
@@ -1301,8 +1301,8 @@ simcir.$ = function() {
         y: event.pageY - off.top};
       $(document).on('mousemove', dlg_mouseMoveHandler);
       $(document).on('mouseup', dlg_mouseUpHandler);
-      $(document).on('tourchmove', dlg_mouseMoveHandler);
-      $(document).on('tourchend', dlg_mouseUpHandler);
+      $(document).on('touchmove', dlg_mouseMoveHandler);
+      $(document).on('touchend', dlg_mouseUpHandler);
     };
     var dlg_mouseMoveHandler = function(event) {
       moveTo(
@@ -1312,11 +1312,11 @@ simcir.$ = function() {
     var dlg_mouseUpHandler = function(event) {
       $(document).off('mousemove', dlg_mouseMoveHandler);
       $(document).off('mouseup', dlg_mouseUpHandler);
-      $(document).off('tourchmove', dlg_mouseMoveHandler);
-      $(document).off('tourchend', dlg_mouseUpHandler);
+      $(document).off('touchmove', dlg_mouseMoveHandler);
+      $(document).off('touchend', dlg_mouseUpHandler);
     };
     $dlg.on('mousedown', dlg_mouseDownHandler);
-    $dlg.on('tourchstart', dlg_mouseDownHandler);
+    $dlg.on('touchstart', dlg_mouseDownHandler);
     $closeButton.on('mousedown', function() {
       $dlg.trigger('close');
       $dlg.remove();
