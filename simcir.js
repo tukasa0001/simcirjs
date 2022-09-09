@@ -1278,6 +1278,9 @@ simcir.$ = function() {
       on('mousedown', function(event) {
         event.preventDefault();
       });
+      on('tourchstart', function(event) {
+        event.preventDefault();
+      });
     var $dlg = $('<div></div>').
       addClass('simcir-dialog').
       css({position:'absolute'}).
