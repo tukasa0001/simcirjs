@@ -1275,8 +1275,12 @@ simcir.$ = function() {
       addClass('simcir-dialog-title').
       text(title).
       css('cursor', 'default').
-      on('mousedown touchstart', function(event) {
-        console.log("mousedown || touchstart");
+      on('mousedown', function(event) {
+        console.log("mousedown");
+        event.preventDefault();
+      }).
+      on('touchstart', function(event) {
+        console.log("touchstart");
         event.preventDefault();
       });
     var $dlg = $('<div></div>').
