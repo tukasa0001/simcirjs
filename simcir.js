@@ -1604,6 +1604,8 @@ simcir.$ = function() {
           y: event.pageY - pos.y};
       $(document).on('mousemove', bar_mouseMoveHandler);
       $(document).on('mouseup', bar_mouseUpHandler);
+      $(document).on('touchmove', bar_mouseMoveHandler);
+      $(document).on('touchend', bar_mouseUpHandler);
     };
     var bar_mouseMoveHandler = function(event) {
       calc(function(unitSize) {
@@ -1613,8 +1615,11 @@ simcir.$ = function() {
     var bar_mouseUpHandler = function(event) {
       $(document).off('mousemove', bar_mouseMoveHandler);
       $(document).off('mouseup', bar_mouseUpHandler);
+      $(document).off('touchmove', bar_mouseMoveHandler);
+      $(document).off('touchend', bar_mouseUpHandler);
     };
     $bar.on('mousedown', bar_mouseDownHandler);
+    $bar.on('touchstart', bar_mouseDownHandler);
     var body_mouseDownHandler = function(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -1629,6 +1634,7 @@ simcir.$ = function() {
       }
     };
     $body.on('mousedown', body_mouseDownHandler);
+    $body.on('touchstart', body_mouseDownHandler);
 
     var setSize = function(width, height) {
       _width = width;
@@ -2123,6 +2129,8 @@ simcir.$ = function() {
       }
       $(document).on('mousemove', mouseMoveHandler);
       $(document).on('mouseup', mouseUpHandler);
+      $(document).on('touchmove', mouseMoveHandler);
+      $(document).on('touchend', mouseUpHandler);
     };
     var mouseMoveHandler = function(event) {
       if (dragMoveHandler != null) {
@@ -2141,8 +2149,11 @@ simcir.$ = function() {
       $temporaryPane.children().remove();
       $(document).off('mousemove', mouseMoveHandler);
       $(document).off('mouseup', mouseUpHandler);
+      $(document).off('touchmove', mouseMoveHandler);
+      $(document).off('touchend', mouseUpHandler);
     };
     $workspace.on('mousedown', mouseDownHandler);
+    $workspace.on('touchstart', mouseDownHandler);
 
     //-------------------------------------------
     //
