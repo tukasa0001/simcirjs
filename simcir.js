@@ -1276,6 +1276,7 @@ simcir.$ = function() {
       text(title).
       css('cursor', 'default').
       on('mousedown touchstart', function(event) {
+        console.log("mousedown || touchstart");
         event.preventDefault();
       });
     var $dlg = $('<div></div>').
