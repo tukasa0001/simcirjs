@@ -2138,6 +2138,7 @@ simcir.$ = function() {
       }
     };
     var mouseUpHandler = function(event) {
+      console.log("mouseUpHandler");
       if (dragCompleteHandler != null) {
         dragCompleteHandler(event);
       }
