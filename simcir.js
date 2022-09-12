@@ -2007,6 +2007,7 @@ simcir.$ = function() {
           adjustDevice($dev);
           addDevice($dev);
         } else {
+          alert("Dispose beginNewDevice");
           $dev.trigger('dispose');
         }
       };
