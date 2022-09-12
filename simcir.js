@@ -2002,7 +2002,7 @@ simcir.$ = function() {
       };
       dragCompleteHandler = function(event) {
         var $target = $(event.target);
-        if ($target.closest('.simcir-toolbox').length == || DBG_IgnoreRemoveDevice) {
+        if ($target.closest('.simcir-toolbox').length == 0 || DBG_IgnoreRemoveDevice) {
           $dev.detach();
           var pos = transform($dev);
           transform($dev, pos.x - toolboxWidth, pos.y);
