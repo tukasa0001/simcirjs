@@ -1983,6 +1983,8 @@ simcir.$ = function() {
         }
       };
     };
+    
+    const DBG_IgnoreRemoveDevice = true;
 
     var beginNewDevice = function(event, $target) {
       var $dev = $target.closest('.simcir-device');
@@ -2000,14 +2002,13 @@ simcir.$ = function() {
       };
       dragCompleteHandler = function(event) {
         var $target = $(event.target);
-        if ($target.closest('.simcir-toolbox').length == 0) {
+        if ($target.closest('.simcir-toolbox').length == || DBG_IgnoreRemoveDevice) {
           $dev.detach();
           var pos = transform($dev);
           transform($dev, pos.x - toolboxWidth, pos.y);
           adjustDevice($dev);
           addDevice($dev);
         } else {
-          alert("Dispose beginNewDevice");
           $dev.trigger('dispose');
         }
       };
@@ -2057,7 +2058,7 @@ simcir.$ = function() {
         var $target = $(event.target);
         enableEvents($dev, true);
         $.each($selectedDevices, function(i, $dev) {
-          if ($target.closest('.simcir-toolbox').length == 0) {
+          if ($target.closest('.simcir-toolbox').length == 0 || DBG_IgnoreRemoveDevice) {
             adjustDevice($dev);
             updateConnectors();
           } else {
