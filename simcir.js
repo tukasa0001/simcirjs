@@ -1984,7 +1984,7 @@ simcir.$ = function() {
       };
     };
     
-    const DBG_IgnoreRemoveDevice = true;
+    const DBG_IgnoreRemoveDevice = false;
 
     var beginNewDevice = function(event, $target) {
       var $dev = $target.closest('.simcir-device');
@@ -2002,6 +2002,7 @@ simcir.$ = function() {
       };
       dragCompleteHandler = function(event) {
         var $target = $(event.target);
+        // $target.closest('.simcir-toolbox').length が不正 多分判定位置がクリック位置になってる?
         if ($target.closest('.simcir-toolbox').length == 0 || DBG_IgnoreRemoveDevice) {
           $dev.detach();
           var pos = transform($dev);
